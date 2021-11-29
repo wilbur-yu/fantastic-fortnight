@@ -1,5 +1,15 @@
-# component-creater
+# 说明
 
+本组件移植于 [spatie](https://github.com/spatie/laravel-translatable)
+
+# 安装
+
+```bash
+composer require wilbur-yu/hyperf-translatable
 ```
-composer create-project hyperf/component-creater
+
+# 发布配置文件
+
+```bash
+php ./bin/hyperf vendor:publish wilbur-yu/hyperf-translatable
 ```
