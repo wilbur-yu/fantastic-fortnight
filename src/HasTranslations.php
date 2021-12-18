@@ -203,7 +203,9 @@ trait HasTranslations
 
     protected function normalizeLocale(string $key, string $locale, bool $useFallbackLocale): string
     {
-        if (in_array($locale, $this->getTranslatedLocales($key), true)) {
+        $translatedLocales = $this->getTranslatedLocales($key);
+
+        if (in_array($locale, $translatedLocales)) {
             return $locale;
         }
 
@@ -211,12 +213,13 @@ trait HasTranslations
             return $locale;
         }
 
-        if (!is_null($fallbackLocale = config('translatable.fallback_locale'))) {
+        $fallbackLocale = config('translatable.fallback_locale') ?? config('app.fallback_locale');
+        if (! is_null($fallbackLocale) && in_array($fallbackLocale, $translatedLocales)) {
             return $fallbackLocale;
         }
 
-        if (!is_null($fallbackLocale = config('app.fallback_locale'))) {
-            return $fallbackLocale;
+        if (! empty($translatedLocales) && config('translatable.fallback_any')) {
+            return $translatedLocales[0];
         }
 
         return $locale;
