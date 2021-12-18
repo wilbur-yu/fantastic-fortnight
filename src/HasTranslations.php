@@ -205,7 +205,7 @@ trait HasTranslations
     {
         $translatedLocales = $this->getTranslatedLocales($key);
 
-        if (in_array($locale, $translatedLocales)) {
+        if (in_array($locale, $translatedLocales, true)) {
             return $locale;
         }
 
@@ -214,7 +214,7 @@ trait HasTranslations
         }
 
         $fallbackLocale = config('translatable.fallback_locale') ?? config('app.fallback_locale');
-        if (! is_null($fallbackLocale) && in_array($fallbackLocale, $translatedLocales)) {
+        if (! is_null($fallbackLocale) && in_array($fallbackLocale, $translatedLocales, true)) {
             return $fallbackLocale;
         }
 
