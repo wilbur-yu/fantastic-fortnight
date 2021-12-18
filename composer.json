@@ -4,7 +4,8 @@
     "license": "MIT",
     "keywords": [
         "php",
-        "hyperf"
+        "hyperf",
+        "hyperf translatable"
     ],
     "description": "A trait to make an model hold translations",
     "autoload": {
