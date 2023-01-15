@@ -87,7 +87,7 @@ trait HasTranslations
 
             return array_filter(
                 json_decode(
-                    $this->getAttributes()[$key] ?? '' ?: '{}',
+                        $this->getAttributes()[$key] ?? '' ?: '{}',
                     true,
                     512,
                     JSON_THROW_ON_ERROR

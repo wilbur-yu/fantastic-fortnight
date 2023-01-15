@@ -27,12 +27,6 @@ class ConfigProvider
                     ],
                 ],
             ],
-            'publish' => [
-                'id' => 'config',
-                'description' => 'The config for wilbur-yu/hyperf-translatable',
-                'source' => __DIR__.'/../publish/translatable.php',
-                'destination' => BASE_PATH.'/config/autoload/translatable.php',
-            ],
         ];
     }
 }
