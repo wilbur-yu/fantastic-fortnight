@@ -11,10 +11,12 @@ declare(strict_types=1);
 
 namespace WilburYu\HyperfTranslatable;
 
-use Hyperf\Utils\Str;
+use Hyperf\Stringable\Str;
 
 use function locale;
 use function event;
+use function Hyperf\Config\config;
+use function Hyperf\Collection\collect;
 
 trait HasTranslations
 {

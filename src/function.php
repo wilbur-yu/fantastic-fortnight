@@ -8,7 +8,7 @@
  */
 
 use Hyperf\Contract\TranslatorInterface;
-use Hyperf\Utils\ApplicationContext;
+use Hyperf\Context\ApplicationContext;
 use Psr\EventDispatcher\EventDispatcherInterface;
 
 if (!function_exists('locale')) {
